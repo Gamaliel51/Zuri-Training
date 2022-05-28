@@ -1,0 +1,101 @@
+<div class="container">
+
+    <form class="well form-horizontal" action="user_data.php" method="post"  id="contact_form">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Full Name</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="fullname" id="fullname" placeholder="Full Name" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >E-mail</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="email" id="email" placeholder="E-mail" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+  
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Date of Birth</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="dob" id="dob" placeholder="Date of Birth" class="form-control"  type="text">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+    <label class="col-md-4 control-label">Gender</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input  name="gender" id="gender" placeholder="Gender" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+  
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >Country</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input name="country" id="country" placeholder="Country" class="form-control"  type="password">
+    </div>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+    <button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div>
+
+<script>
+    function post(){
+        name = document.getElementById("fullname")
+        email = document.getElementById("email")
+        dob = document.getElementById("dob")
+        gender = document.getElementById("gender")
+        country = document.getElementById("country")
+
+        $.ajax({
+		 type: "POST",
+		 url: "user_data.php", //call storeemdata.php to store form data
+		 data: formdata,
+		 cache: false,
+		 success: function(html) {
+		  alert(html);
+		 }
+	});
+    }
+</script>
